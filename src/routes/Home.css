@@ -1,0 +1,27 @@
+@import "../components/menu.css";
+@import "../components/border.css";
+
+body {
+  width: 50vw;
+  height: 100vh;
+  background: linear-gradient(to top, #e2fdfa, #f6f3ee);
+}
+
+.linkList {
+  display: flex;
+  padding: 0px 100px;
+  padding-bottom: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.introduce {
+  display: flex;
+  justify-content: center;
+}
+
+.introduce > p1 {
+  font-size: x-large;
+  font-weight: 1000;
+  margin: 100px;
+}

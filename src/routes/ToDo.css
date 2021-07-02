@@ -1,0 +1,60 @@
+@import "../components/border.css";
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Cafe24SsurroundAir";
+}
+
+.date {
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  margin: 0px 100px;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+  border-image-slice: 1;
+}
+
+.date div:first-child {
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.date div:nth-child(2) {
+  font-size: large;
+  color: tomato;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.date div:last-child {
+  font-size: x-large;
+  color: palevioletred;
+  font-weight: 600;
+}
+
+.todo {
+  margin: 10px;
+  font-size: x-large;
+}
+
+.todo input {
+  width: 50px;
+  height: 20px;
+}
+
+.todoList {
+  padding-left: 50px;
+  padding-bottom: 100px;
+  padding-top: 30px;
+  margin: 0px 100px;
+  display: flex;
+  flex-direction: column;
+}
