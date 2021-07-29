@@ -64,6 +64,11 @@ class ToDo extends React.Component {
     checkActive(item){
         const list = [...this.state.list];
         const newItem = list.find(element => element===item);
+        if(newItem.isDone===true)
+            this.setState({totalNum : this.state.totalNum + 1});
+        else if(newItem.isDone===false)
+            this.setState({totalNum : this.state.totalNum - 1});
+
         newItem.isDone = !newItem.isDone;
         this.setState({
             list
