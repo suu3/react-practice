@@ -16,7 +16,7 @@ class Home extends React.Component {
                         <Link to="/ToDo">ToDo</Link>
                     </div>
                     <div className = "menu">
-                        
+                        <Link to="/Chat">Chat</Link>
                     </div>
                     <div className = "menu">
                         

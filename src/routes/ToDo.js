@@ -1,7 +1,7 @@
 import React, { setState } from 'react';
 import "../css/ToDo/ToDo.css";
 import styled, { css } from "styled-components";
-import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCheck, AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const Checkbox = styled.button`
   width: 30px;
@@ -9,7 +9,6 @@ const Checkbox = styled.button`
   border-radius: 25px;
   border: 3px solid rgb(48, 79, 255);
   background-color: white;
-  margin-right: 20px;
   cursor: pointer;
   display: flex;
   color: rgb(48, 79, 255);
@@ -45,9 +44,22 @@ const ToDoText = styled.p`
     margin: 0;
     padding: 0;
     ${props =>
-    props.isDone &&
+    props.isImportant &&
     css`
-      color: rgba(1,1,1,0.2);
+        color: red;
+        font-weight: 900;
+    `}
+    ${props =>
+    props.isDone &&
+        css`
+          color: rgba(1,1,1,0.2);
+    `}
+    ${props =>
+    props.isImportant && props.isDone &&
+        css`
+            color: red;
+            opacity: 0.2;
+            font-weight: 900;
     `}
 `;
 
@@ -73,8 +85,14 @@ class ToDo extends React.Component {
         this.setState({
             list
         });
-            
-        console.log(list);
+    };
+    importantActive(item){
+        const list = [...this.state.list];
+        const newItem = list.find(element => element===item);
+        newItem.isImportant = !newItem.isImportant;
+        this.setState({
+            list
+        });
     };
     updateInput(key,value) {
         this.setState({[key]:value });
@@ -83,7 +101,8 @@ class ToDo extends React.Component {
         const newItem = {
           id: 1 + Math.random(),
           value: this.state.newItem.slice(),
-          isDone: false
+          isDone: false,
+          isImportant: false
         };
     
         const list = [...this.state.list];
@@ -108,9 +127,9 @@ class ToDo extends React.Component {
         return (
             <div className="border">
                 <div className="date">
-                    <div>{this.state.day.getFullYear()}년 {this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
+                    <div>{this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
                     <div></div>
-                    <div>🔷 남은 할 일 {this.state.totalNum}개 🔷</div>
+                    <div>🔷 오늘의 할 일 {this.state.totalNum}개 🔷</div>
                </div>
                <div className="todoList">
                    <ul>
@@ -118,8 +137,12 @@ class ToDo extends React.Component {
                         return (
                             <li key={item.id}>
                                 <div className="todo">
+                                    <div className="important_check">
+                                    {!item.isImportant && <AiOutlineStar onClick={ () => this.importantActive(item)} style={{marginLeft:10, marginRight: 7}} color="orange" />}
+                                    {item.isImportant && <AiFillStar onClick={ () => this.importantActive(item)} style={{marginLeft:10, marginRight: 7}} color="orange" />}
                                     <Checkbox isDone={item.isDone} onClick={ () => this.checkActive(item)}>{console.log("isDone?" + item.isDone)}{item.isDone && <AiOutlineCheck />}</Checkbox>
-                                    <ToDoText isDone={item.isDone}>{item.value}</ToDoText>
+                                    </div>
+                                    <ToDoText isDone={item.isDone} isImportant={item.isImportant}>{item.value}</ToDoText>
                                     <XButton isDone={item.isDone} onClick={() => this.deleteItem(item.id)}>X</XButton>
                                 </div>
                             </li>
