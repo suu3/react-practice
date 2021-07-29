@@ -1,0 +1,41 @@
+ul {
+  list-style: none;
+}
+
+.plusBox {
+  position: absolute;
+  left: 170px;
+  bottom: 30px;
+}
+
+.plusBox_text {
+  padding: 20px 40px;
+  padding-left: 80px;
+  border-radius: 25px;
+  border: 1px solid black;
+  font-size: x-large;
+}
+
+.plusBox_text:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px grey;
+}
+
+button:focus {
+  outline: none;
+}
+.plusBox_text:focus::placeholder {
+  color: transparent;
+}
+
+.plusBox_button {
+  position: absolute;
+  left: 20px;
+  border-radius: 25px;
+  height: 40px;
+  top: 15px;
+  width: 40px;
+  font-size: x-large;
+  border: none;
+  background-color: rgb(214, 255, 212);
+}
