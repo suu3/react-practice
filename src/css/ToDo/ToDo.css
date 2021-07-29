@@ -84,16 +84,3 @@
 .todoList::-webkit-scrollbar {
   display: none;
 }
-
-.Xbutton {
-  border-radius: 25px;
-  border: none;
-  height: 30px;
-  font-size: large;
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  width: 30px;
-  margin-left: 80px;
-  background-color: rgb(255, 75, 105);
-}

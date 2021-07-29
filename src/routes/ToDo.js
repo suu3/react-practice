@@ -23,6 +23,24 @@ const Checkbox = styled.button`
     `}
 `;
 
+const XButton = styled.button`
+    border-radius: 25px;
+    border: none;
+    height: 30px;
+    font-size: large;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    width: 30px;
+    margin-left: 80px;
+    background-color: rgb(255, 75, 105);
+    ${props =>
+        props.isDone &&
+        css`
+          background-color: rgb(255, 75, 105, 0.2);
+    `}
+`;
+
 const ToDoText = styled.p`
     margin: 0;
     padding: 0;
@@ -97,7 +115,7 @@ class ToDo extends React.Component {
                                 <div className="todo">
                                     <Checkbox isDone={item.isDone} onClick={ () => this.checkActive(item)}>{console.log("isDone?" + item.isDone)}{item.isDone && <AiOutlineCheck />}</Checkbox>
                                     <ToDoText isDone={item.isDone}>{item.value}</ToDoText>
-                                    <button className="Xbutton" onClick={() => this.deleteItem(item.id)}>X</button>
+                                    <XButton isDone={item.isDone} onClick={() => this.deleteItem(item.id)}>X</XButton>
                                 </div>
                             </li>
                         );
