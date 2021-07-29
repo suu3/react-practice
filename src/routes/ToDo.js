@@ -1,7 +1,27 @@
-import React, {useState} from 'react';
+import React, {setState} from 'react';
 import "../css/ToDo/ToDo.css";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { AiOutlineCheck } from "react-icons/ai";
 
+const Checkbox = styled.button`
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  border: 3px solid rgb(48, 79, 255);
+  background-color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  color: rgb(48, 79, 255);
+  align-items: center;
+  padding: 0;
+  justify-content: center;
+  ${props =>
+    props.isDone &&
+    css`
+      background-color: black;
+    `}
+`;
 
 class ToDo extends React.Component {
     constructor(props){
@@ -9,17 +29,25 @@ class ToDo extends React.Component {
         this.state = {
             day: new Date(),
             newItem: "",
-            list: []
+            list: [],
+            totalNum : 0
         };
-        console.log(this.state.day);
-    }
+    };
+    checkActive(item){
+        if(item.isDone===false)
+            this.setState({isDone: true});
+        else if(item.isDone===true)
+            this.setState({isDone: false});
+        console.log(item);
+    };
     updateInput(key,value) {
         this.setState({[key]:value });
-    }
+    };
     addItem() {
         const newItem = {
           id: 1 + Math.random(),
-          value: this.state.newItem.slice()
+          value: this.state.newItem.slice(),
+          isDone: false
         };
     
         const list = [...this.state.list];
@@ -27,43 +55,36 @@ class ToDo extends React.Component {
     
         this.setState({
           list,
-          newItem:''
+          newItem:'',
+          totalNum: this.state.totalNum + 1
         });
-    }
+    };
     deleteItem(id) {
         const list = [...this.state.list];
         const updatedList = list.filter(item => item.id !== id);
-        this.setState({ list: updatedList });
-    }
+        this.setState({
+            list: updatedList,
+            totalNum: this.state.totalNum - 1
+        });
+    };
     render(){
         const date = ['일', '월', '화', '수', '목', '금', '토'];
         return (
             <div className="border">
                 <div className="date">
-                    <div>{this.state.day.getFullYear()}년 {this.state.day.getMonth()+1}월 {this.state.day.getDate()}일</div>
-                    <div>{date[this.state.day.getDay()]}요일</div>
-                    <div>🔷 남은 할 일 __개 🔷</div>
+                    <div>{this.state.day.getFullYear()}년 {this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
+                    <div></div>
+                    <div>🔷 남은 할 일 {this.state.totalNum}개 🔷</div>
                </div>
                <div className="todoList">
                    <ul>
-                        <div className="todo">
-                            <input type="checkbox"></input>
-                            <p1>공부하기</p1>
-                        </div>
-                        <div className="todo">
-                            <input type="checkbox"></input>
-                            <p1>코딩하기</p1>
-                        </div>
-                    {/*구글링 코드*/}
                         {this.state.list.map(item => {
                         return (
                             <li key={item.id}>
                                 <div className="todo">
-                                    <input type="checkbox"></input>
+                                    <Checkbox onClick={ () => this.checkActive(item)}>{item.isDone && <AiOutlineCheck />}</Checkbox>
                                     <p1>{item.value}</p1>
-                                    <button onClick={() => this.deleteItem(item.id)}>
-                                            <i>x</i>
-                                    </button>
+                                    <button className="Xbutton" onClick={() => this.deleteItem(item.id)}>X</button>
                                 </div>
                             </li>
                         );

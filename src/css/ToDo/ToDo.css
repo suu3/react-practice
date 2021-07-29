@@ -48,7 +48,14 @@
 }
 
 .todo {
-  margin: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 25px;
+  margin-left: 30px;
+  margin-right: 50px;
   font-size: x-large;
 }
 
@@ -60,7 +67,6 @@
 .todoList {
   overflow: auto;
   height: 200px;
-  padding-left: 50px;
   padding-bottom: 100px;
   padding-top: 30px;
   margin: 40px 100px;
@@ -76,4 +82,17 @@
 }
 .todoList::-webkit-scrollbar {
   display: none;
+}
+
+.Xbutton {
+  border-radius: 25px;
+  border: none;
+  height: 30px;
+  font-size: large;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  width: 30px;
+  margin-left: 80px;
+  background-color: rgb(255, 75, 105);
 }
