@@ -1,4 +1,4 @@
-import React, {setState} from 'react';
+import React, { setState } from 'react';
 import "../css/ToDo/ToDo.css";
 import styled, { css } from "styled-components";
 import { AiOutlineCheck } from "react-icons/ai";
@@ -34,11 +34,14 @@ class ToDo extends React.Component {
         };
     };
     checkActive(item){
-        if(item.isDone===false)
-            this.setState({isDone: true});
-        else if(item.isDone===true)
-            this.setState({isDone: false});
-        console.log(item);
+        const list = [...this.state.list];
+        const newItem = list.find(element => element===item);
+        newItem.isDone = !newItem.isDone;
+        this.setState({
+            list
+        });
+            
+        console.log(list);
     };
     updateInput(key,value) {
         this.setState({[key]:value });
@@ -82,7 +85,7 @@ class ToDo extends React.Component {
                         return (
                             <li key={item.id}>
                                 <div className="todo">
-                                    <Checkbox onClick={ () => this.checkActive(item)}>{item.isDone && <AiOutlineCheck />}</Checkbox>
+                                    <Checkbox onClick={ () => this.checkActive(item)}>{console.log("isDone?" + item.isDone)}{item.isDone && <AiOutlineCheck />}</Checkbox>
                                     <p1>{item.value}</p1>
                                     <button className="Xbutton" onClick={() => this.deleteItem(item.id)}>X</button>
                                 </div>
