@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import "../css/Chat/Chat.css";
 import styled from "styled-components";
-import { Widget, addResponseMessage } from 'react-chat-widget';
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaPaperPlane } from "react-icons/fa";
 import 'react-chat-widget/lib/styles.css';
@@ -25,6 +24,7 @@ const ChatScreen = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;    
+    box-shadow:  5px 5px 5px rgba(1, 1, 1, 0.5);
 `;
 
 const ChatTitle = styled.div`
@@ -54,7 +54,7 @@ const ChatBottom = styled.div`
 
 const ChatInput = styled.input`
     font-family: "Cafe24SsurroundAir";
-    font-size: 15px;
+    font-size: 18px;
     border: none;
     background-color: rgba(244, 247, 249);
     &:focus {
@@ -89,7 +89,23 @@ const ChatMessageTime = styled.div`
     margin-top: 3px;
 `;
 
+const ChatMessage2 = styled.div`
+    margin: 0px 12px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+`;
 
+const Alert = styled.div`
+    width:22px;
+    height:22px;
+    background-color: red;
+    border-radius:25px;
+    color: white;
+    font-size:small;
+    text-align: center;
+    margin-left: 8px;
+`;
 const date = new Date();
 
 function time (num) {
@@ -100,39 +116,56 @@ function time (num) {
     else return num;
 }
 
-
+const messageList = [];
 function Chat (){
-    useEffect(() => {
-        addResponseMessage('Welcome to this awesome chat!');
-      }, []);
- 
-    const handleNewUserMessage = (newMessage) => {
-        console.log(`New message incoming! ${newMessage}`);
-    // Now send the message throught the backend API
-        //addResponseMessage();
-    };
-
+    const [text, setText] = useState('');
+    const onChange = (e) => {
+        setText(e.target.value);
+    }
+    const onReset = () => {
+        setText('');
+        messageList.push(text);
+    } 
     return(
         <ChatBody>
             <ChatScreen>
                 <ChatTitle>
                     <IoPersonCircleSharp style={{fontSize: 'xx-large', marginRight: 10, marginTop: 3}} />Someone
+                    <Alert>2</Alert>
                 </ChatTitle>
                 <ChatContent>
-                    <ChatMessage>
-                        <ChatMessageContent>안녕!</ChatMessageContent>
-                        <ChatMessageTime>{time((date.getHours() + 24) % 12 || 12)}:{time(date.getMinutes())}</ChatMessageTime>
-                    </ChatMessage>
-                    <ChatMessage>
-                        <ChatMessageContent>시간 있어?</ChatMessageContent>
-                        <ChatMessageTime>{time((date.getHours() + 24) % 12 || 12)}:{time(date.getMinutes())}</ChatMessageTime>
-                    </ChatMessage>
+                    <ul>
+                        <ChatMessage>
+                            <ChatMessageContent>안녕!</ChatMessageContent>
+                            <ChatMessageTime>13:11</ChatMessageTime>
+                        </ChatMessage>
+                        <ChatMessage>
+                            <ChatMessageContent>시간 있어?</ChatMessageContent>
+                            <ChatMessageTime>13:11</ChatMessageTime>
+                        </ChatMessage>
+                    
+                        {messageList.map(text => {
+                            return (
+                                <li>
+                                     <ChatMessage2>
+                                        <div style={{display:'flex', flexDirection:'column'}}>
+                                            <ChatMessageContent>{text}</ChatMessageContent>
+                                            <ChatMessageTime style={{display:'flex', justifyContent:'flex-end'}}>{time((date.getHours() + 24) % 12 || 12)}:{time(date.getMinutes())}</ChatMessageTime>
+                                        </div>
+                                    </ChatMessage2>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </ChatContent>
-                <ChatBottom><ChatInput placeholder="메세지를 입력하세요..." /><FaPaperPlane size={20}/></ChatBottom>
+                <ChatBottom>
+                    <ChatInput 
+                        onChange={onChange} value={text}
+                        onKeyPress={e=>{if(e.key==='Enter') onReset();}}
+                        placeholder="메세지를 입력하세요..." />
+                    <FaPaperPlane onClick={onReset} size={20}/>
+                    </ChatBottom>
             </ChatScreen>
-            <Widget
-                handleNewUserMessage={handleNewUserMessage}
-            />
         </ChatBody>
     );
 }

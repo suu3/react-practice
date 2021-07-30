@@ -1,4 +1,4 @@
-import React, { setState } from 'react';
+import React from 'react';
 import "../css/ToDo/ToDo.css";
 import styled, { css } from "styled-components";
 import { AiOutlineCheck, AiFillStar, AiOutlineStar } from "react-icons/ai";
