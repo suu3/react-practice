@@ -19,7 +19,7 @@ class Home extends React.Component {
                         <Link to="/Chat">Chat</Link>
                     </div>
                     <div className = "menu">
-                        
+                        <Link to="/Calendar">Calendar</Link>
                     </div>
                     <div className = "menu">
                         
