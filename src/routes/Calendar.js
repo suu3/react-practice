@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/Calendar/Calendar.css";
 import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth,
     addDays, addMonths, subMonths, parse, isSameDay, isSameMonth } from 'date-fns'
 
@@ -111,23 +112,25 @@ class Calendar extends React.Component {
 
   render() {
     return (
-        <div className="CalendarBody">
-        <header>
-          <div id="logo">
-            <span className="icon" />
-            <span>
-              <b>calendar</b>
-            </span>
-          </div>
-        </header>
-        <main>
-                <div className="calendar">
-                {this.renderHeader()}
-                {this.renderDays()}
-                {this.renderCells()}
+      <body className="CalendarBody">
+        <div className="CalendarContent">
+          <header>
+            <div id="logo">
+              <span className="icon" />
+              <span>
+                <b>calendar</b>
+              </span>
             </div>
-        </main>
-      </div>
+          </header>
+          <main>
+              <div className="calendar">
+                  {this.renderHeader()}
+                  {this.renderDays()}
+                  {this.renderCells()}
+              </div>
+          </main>
+        </div>
+      </body>
     );
   }
 }
