@@ -7,7 +7,7 @@ const Checkbox = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 25px;
-  border: 3px solid rgb(48, 79, 255);
+  border: 3px solid rgba(1,1,1,0.8);
   background-color: white;
   cursor: pointer;
   display: flex;
@@ -122,13 +122,17 @@ class ToDo extends React.Component {
             totalNum: this.state.totalNum - 1
         });
     };
+    preventEmpty(){
+        if(this.state.newItem==="")
+            return;
+        this.addItem();
+    }
     render(){
         const date = ['일', '월', '화', '수', '목', '금', '토'];
         return (
             <div className="border">
                 <div className="date">
                     <div>{this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
-                    <div></div>
                     <div>🔷 오늘의 할 일 {this.state.totalNum}개 🔷</div>
                </div>
                <div className="todoList">
@@ -151,13 +155,13 @@ class ToDo extends React.Component {
                     </ul>
                </div>
                <div className="plusBox">
-                   <form>
-                       <button className="plusBox_button" onClick={() => this.addItem()}>+</button>
-                       <input className="plusBox_text" type="text" placeholder="할 일을 입력하세요. "
-                       value={this.state.newItem}
-                       onChange={e => this.updateInput('newItem', e.target.value)}
-                       ></input>
-                   </form>
+                    <button className="plusBox_button" onClick={() => this.preventEmpty()}>+</button>
+                    <input className="plusBox_text"
+                    onKeyPress={(e) => {if(e.key=="Enter") this.preventEmpty();}}
+                    type="text" placeholder="할 일을 입력하세요. "
+                    value={this.state.newItem}
+                    onChange={e => this.updateInput('newItem', e.target.value)}
+                    />
                </div>
             </div>
         );
