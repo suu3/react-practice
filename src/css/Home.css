@@ -1,27 +1,38 @@
-@import "../components/menu.css";
 @import "../components/border.css";
+
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   width: 50vw;
   height: 100vh;
-  background: linear-gradient(to top, #e2fdfa, #f6f3ee);
+  background: linear-gradient(to top, #fff068, #fd746c);
 }
 
-.linkList {
-  display: flex;
-  padding: 0px 100px;
-  padding-bottom: 100px;
-  align-items: center;
-  justify-content: space-between;
+.border {
+  display: inline-block;
 }
 
 .introduce {
-  display: flex;
-  justify-content: center;
+  font-size: 25px;
 }
 
-.introduce > p1 {
-  font-size: x-large;
-  font-weight: 1000;
-  margin: 100px;
+.introduce {
+  text-align: center;
+}
+
+.menu {
+  padding: 5px 100px;
+  text-decoration: none;
+}
+
+.menu a {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
 }

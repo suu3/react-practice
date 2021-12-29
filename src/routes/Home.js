@@ -7,23 +7,22 @@ class Home extends React.Component {
     }
     render(){
         return (
-            <div className = "border">
+            <div className="border">
                 <div className="introduce">
-                    <p1>Hello, It's first page!</p1>
+                    <h1>Content</h1>
                 </div>
                 <div className="linkList">
-                    <div className = "menu">
-                        <Link to="/ToDo">ToDo</Link>
-                    </div>
-                    <div className = "menu">
-                        <Link to="/Chat">Chat</Link>
-                    </div>
-                    <div className = "menu">
-                        <Link to="/Calendar">Calendar</Link>
-                    </div>
-                    <div className = "menu">
-                        
-                    </div>
+                    <ul>
+                        <li className = "menu">
+                            <Link to="/ToDo">✅ ToDo</Link>
+                        </li>
+                        <li className = "menu">
+                            <Link to="/Chat">✅ Chat</Link>
+                        </li>
+                        <li className = "menu">
+                            <Link to="/Search">❓ Search</Link>
+                        </li>                           
+                    </ul>
                 </div>
             </div>
         );

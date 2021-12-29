@@ -1,15 +1,18 @@
 @import "../../components/border.css";
+
 @font-face {
   font-family: "Cafe24SsurroundAir";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @import "./PlusBox.css";
 
-@import body {
+body {
+  width: 30vw;
+  height: 100%;
+  background-repeat: no-repeat;
   font-family: "Cafe24SsurroundAir";
 }
 
@@ -18,30 +21,24 @@
   padding-bottom: 80px;
 }
 
+
 .date {
-  padding-top: 80px;
+  padding-top: 50px;
   padding-left: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   margin: 0px 100px;
-  border-bottom-style: solid;
-  border-bottom-width: thin;
-  border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #fd746c 0%, #ff9068 100%);
   border-image-slice: 1;
 }
 
-.date div:first-child {
+.date:first-child {
   font-size: xx-large;
   font-weight: 600;
 }
 
-.date div:nth-child(2) {
-  font-size: large;
-  color: tomato;
-  margin-top: 10px;
-  margin-bottom: 50px;
-}
-
 .date div:last-child {
+  margin-top: 20px;
   font-size: x-large;
   color: palevioletred;
   font-weight: 600;
@@ -81,6 +78,7 @@
 .todoList {
   -ms-overflow-style: none;
 }
+
 .todoList::-webkit-scrollbar {
   display: none;
 }

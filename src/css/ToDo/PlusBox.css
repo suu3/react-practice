@@ -3,27 +3,33 @@ ul {
 }
 
 .plusBox {
+  width: 75%;
   position: absolute;
-  left: 170px;
+  left: 110px;
   bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .plusBox_text {
-  padding: 15px 40px;
+  width: 100%;
+  padding: 10px 40px;
   padding-left: 80px;
-  border-radius: 25px;
-  border: 2px solid rgb(158, 137, 137);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(158, 137, 137);
   font-size: x-large;
+
 }
 
 .plusBox_text:focus {
   outline: none;
-  box-shadow: 0 0 0 2px grey;
 }
 
 button:focus {
   outline: none;
 }
+
 .plusBox_text:focus::placeholder {
   color: transparent;
 }
@@ -33,11 +39,11 @@ button:focus {
   left: 20px;
   border-radius: 25px;
   height: 40px;
-  top: 12px;
+  top: 2px;
   width: 40px;
   font-size: xx-large;
   font-weight: 600;
   border: none;
-  color: rgb(96, 112, 255);
-  background-color: rgb(214, 255, 212);
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 177, 59);
 }
