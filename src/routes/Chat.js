@@ -8,7 +8,7 @@ import 'react-chat-widget/lib/styles.css';
 const ChatBody = styled.body`
     width 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(114, 170, 255), rgba(255, 61, 202, 0.8));
+    background: linear-gradient(to bottom, #e96443, #904e95);
     margin: -8px -8px;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ const ChatScreen = styled.div`
 `;
 
 const ChatTitle = styled.div`
-    background-color: rgba(53, 203, 229, 0.7);
+    background-color: #FFC371;
     height: 15%;
     display: flex;
     flex-direction: row;
@@ -106,6 +106,11 @@ const Alert = styled.div`
     text-align: center;
     margin-left: 8px;
 `;
+
+const AlertText = styled.div`
+    margin-top: 4px;
+`;
+
 const date = new Date();
 
 function time (num) {
@@ -131,7 +136,7 @@ function Chat (){
             <ChatScreen>
                 <ChatTitle>
                     <IoPersonCircleSharp style={{fontSize: 'xx-large', marginRight: 10, marginTop: 3}} />Someone
-                    <Alert>2</Alert>
+                    <Alert><AlertText>2</AlertText></Alert>
                 </ChatTitle>
                 <ChatContent>
                     <ul>

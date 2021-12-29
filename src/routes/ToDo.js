@@ -157,7 +157,7 @@ class ToDo extends React.Component {
                <div className="plusBox">
                     <button className="plusBox_button" onClick={() => this.preventEmpty()}>+</button>
                     <input className="plusBox_text"
-                    onKeyPress={(e) => {if(e.key=="Enter") this.preventEmpty();}}
+                    onKeyPress={(e) => {if(e.key==="Enter") this.preventEmpty();}}
                     type="text" placeholder="할 일을 입력하세요. "
                     value={this.state.newItem}
                     onChange={e => this.updateInput('newItem', e.target.value)}
