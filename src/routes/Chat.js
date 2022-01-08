@@ -9,7 +9,6 @@ const ChatBody = styled.body`
     width 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, #e96443, #904e95);
-    margin: -8px -8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,6 +24,10 @@ const ChatScreen = styled.div`
     flex-direction: column;
     justify-content: space-between;    
     box-shadow:  5px 5px 5px rgba(1, 1, 1, 0.5);
+    @media screen and (max-width:767px){ 
+        width: 100%;
+        margin: 20px;
+    }
 `;
 
 const ChatTitle = styled.div`
