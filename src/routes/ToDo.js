@@ -130,39 +130,41 @@ class ToDo extends React.Component {
     render(){
         const date = ['일', '월', '화', '수', '목', '금', '토'];
         return (
-            <div className="border">
-                <div className="date">
-                    <div>{this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
-                    <div>🔷 오늘의 할 일 {this.state.totalNum}개 🔷</div>
-               </div>
-               <div className="todoList">
-                   <ul>
-                        {this.state.list.map(item => {
-                        return (
-                            <li key={item.id}>
-                                <div className="todo">
-                                    <div className="important_check">
-                                    {!item.isImportant && <AiOutlineStar onClick={ () => this.importantActive(item)} style={{marginLeft:10, marginRight: 7}} color="orange" />}
-                                    {item.isImportant && <AiFillStar onClick={ () => this.importantActive(item)} style={{marginLeft:10, marginRight: 7}} color="orange" />}
-                                    <Checkbox isDone={item.isDone} onClick={ () => this.checkActive(item)}>{console.log("isDone?" + item.isDone)}{item.isDone && <AiOutlineCheck />}</Checkbox>
+            <div className="todo-body">
+                <div className="border">
+                    <div className="date">
+                        <div>{this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
+                        <div>🔷 오늘의 할 일 {this.state.totalNum}개 🔷</div>
+                </div>
+                <div className="todoList">
+                    <ul>
+                            {this.state.list.map(item => {
+                            return (
+                                <li key={item.id}>
+                                    <div className="todo">
+                                        <div className="important_check">
+                                        {!item.isImportant && <AiOutlineStar onClick={ () => this.importantActive(item)} style={{marginLeft:10, marginRight: 7}} color="orange" />}
+                                        {item.isImportant && <AiFillStar onClick={ () => this.importantActive(item)} style={{marginLeft:10, marginRight: 7}} color="orange" />}
+                                        <Checkbox isDone={item.isDone} onClick={ () => this.checkActive(item)}>{console.log("isDone?" + item.isDone)}{item.isDone && <AiOutlineCheck />}</Checkbox>
+                                        </div>
+                                        <ToDoText isDone={item.isDone} isImportant={item.isImportant}>{item.value}</ToDoText>
+                                        <XButton isDone={item.isDone} onClick={() => this.deleteItem(item.id)}>X</XButton>
                                     </div>
-                                    <ToDoText isDone={item.isDone} isImportant={item.isImportant}>{item.value}</ToDoText>
-                                    <XButton isDone={item.isDone} onClick={() => this.deleteItem(item.id)}>X</XButton>
-                                </div>
-                            </li>
-                        );
-                        })}
-                    </ul>
-               </div>
-               <div className="plusBox">
-                    <button className="plusBox_button" onClick={() => this.preventEmpty()}>+</button>
-                    <input className="plusBox_text"
-                    onKeyPress={(e) => {if(e.key==="Enter") this.preventEmpty();}}
-                    type="text" placeholder="할 일을 입력하세요. "
-                    value={this.state.newItem}
-                    onChange={e => this.updateInput('newItem', e.target.value)}
-                    />
-               </div>
+                                </li>
+                            );
+                            })}
+                        </ul>
+                </div>
+                <div className="plusBox">
+                        <button className="plusBox_button" onClick={() => this.preventEmpty()}>+</button>
+                        <input className="plusBox_text"
+                        onKeyPress={(e) => {if(e.key==="Enter") this.preventEmpty();}}
+                        type="text" placeholder="할 일을 입력하세요. "
+                        value={this.state.newItem}
+                        onChange={e => this.updateInput('newItem', e.target.value)}
+                        />
+                </div>
+                </div>
             </div>
         );
     }

@@ -7,7 +7,8 @@ class Home extends React.Component {
     }
     render(){
         return (
-            <div className="border">
+            <div className='home-body'>
+            <section className="home-border">
                 <div className="introduce">
                     <h1>Content</h1>
                 </div>
@@ -24,6 +25,7 @@ class Home extends React.Component {
                         </li>                           
                     </ul>
                 </div>
+            </section>
             </div>
         );
     }
