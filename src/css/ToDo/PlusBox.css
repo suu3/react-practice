@@ -1,12 +1,10 @@
-ul {
-  list-style: none;
-}
+
 
 .plusBox {
   width: 75%;
   position: absolute;
   left: 110px;
-  bottom: 30px;
+  bottom: 50px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -38,12 +36,37 @@ button:focus {
   position: absolute;
   left: 20px;
   border-radius: 25px;
-  height: 40px;
+  height: 4rem;
+  width: 4rem;
   top: 2px;
-  width: 40px;
   font-size: xx-large;
   font-weight: 600;
   border: none;
   color: rgb(255, 255, 255);
   background-color: rgb(255, 177, 59);
+}
+
+
+@media screen and (max-width:767px){ 
+  .plusBox {
+    left: 4rem;
+    bottom: 3rem;
+  }
+  .plusBox_text{
+    font-size: large;
+    padding: 1rem;
+    padding-left: 5rem;
+  }
+  .plusBox_button{
+    left: .5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media screen and (max-width:411px){ 
+  .plusBox {
+    left: 4rem;
+    bottom: 2rem;
+  }
 }

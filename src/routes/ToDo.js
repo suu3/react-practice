@@ -20,6 +20,12 @@ const Checkbox = styled.button`
     css`
       background-color: rgb(255, 159, 188);
     `}
+
+  @media screen and (max-width:767px){ 
+    transform: translateX(-20%);
+
+    }
+
 `;
 
 const XButton = styled.button`
@@ -131,7 +137,7 @@ class ToDo extends React.Component {
         const date = ['일', '월', '화', '수', '목', '금', '토'];
         return (
             <div className="todo-body">
-                <div className="border">
+                <div className="todo-border">
                     <div className="date">
                         <div>{this.state.day.getMonth()+1}월 {this.state.day.getDate()}일 {date[this.state.day.getDay()]}요일</div>
                         <div>🔷 오늘의 할 일 {this.state.totalNum}개 🔷</div>

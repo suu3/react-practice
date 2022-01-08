@@ -12,26 +12,25 @@
   font-family: "Cafe24SsurroundAir";
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
   background: linear-gradient(to top, #fff068, #fd746c);
 }
 
-.border {
+.todo-border {
   position: relative;
-  padding-bottom: 80px;
-  width: 50%;
+  padding-bottom: 8rem;
+  width: 70%;
   background-color: white;
   align-items: center;
-  margin: 100px;
-  border-radius: 50px;
+  border-radius: 5rem;
+  margin: 6rem 0;
 }
 
-
 .date {
-  padding-top: 50px;
-  padding-left: 50px;
-  padding-bottom: 20px;
-  margin: 0px 100px;
-  border-bottom: 1px solid;
+  padding: 5rem 0 2rem 5rem;
+  margin: 0 10rem;
+  border-bottom: .1rem solid;
   border-image: linear-gradient(to right, #fd746c 0%, #ff9068 100%);
   border-image-slice: 1;
 }
@@ -42,7 +41,7 @@
 }
 
 .date div:last-child {
-  margin-top: 20px;
+  margin-top: 2rem;
   font-size: x-large;
   color: palevioletred;
   font-weight: 600;
@@ -52,31 +51,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   background-color: white;
-  padding: 10px 10px;
-  border-radius: 25px;
-  margin-left: 30px;
-  margin-right: 70px;
+  padding: 1rem 1rem;
+  border-radius: 2.5rem;
+  margin: 0 5rem 2rem 1rem;
   font-size: x-large;
 }
 
 .todo input {
-  width: 50px;
-  height: 20px;
+  width: 5rem;
+  height: 2rem;
 }
 
 .todoList {
   overflow: auto;
-  height: 200px;
-  padding-bottom: 100px;
-  padding-top: 30px;
-  margin: 40px 100px;
+  height: 38%;
+  padding-bottom: 10rem;
+  padding-top: 3rem;
+  margin: 4rem 10rem;
   display: flex;
   flex-direction: column;
   background: rgba(1, 1, 1, 0.05);
-  border-radius: 25px;
-  margin-bottom: 40px;
+  border-radius: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .todoList {
@@ -91,4 +88,53 @@
   display: flex;
   align-items: center;
   font-size: xx-large;
+}
+
+
+@media screen and (min-width:768px) and (max-width: 1024px) {
+  /* Tablet */
+
+  .plusBox {
+    bottom: 6rem;
+  
+  }
+}
+@media screen and (max-width:767px){ 
+  /* Mobile */
+  .todo-body{
+    height: 100vh;
+  }
+  .todo-border {
+    width: 85%;
+  }
+  .todoList {
+    margin: 2rem 3rem ;
+    height: 60%;
+  }
+  .date:first-child {
+    font-size: x-large;
+  }  
+  .date div:last-child {
+    margin-top: 1rem;
+    font-size: large;
+  }
+  .date {
+    padding: 3rem 2rem 2rem 4rem;
+    margin: 0;
+  }
+
+  .todo {
+    margin: 0;
+    padding: 1rem .5rem 1rem 0;
+  }
+  ul {
+    padding: 0 .5rem;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width:413px){ 
+  .todoList {
+    height: 55%;
+  }
 }
