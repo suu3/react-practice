@@ -1,12 +1,14 @@
 import { Route } from 'react-router-dom';
 import PostList from './Board/PostList';
-import PostView from './Board/PostView';
+import PostDetail from './Board/PostDetail';
+import PostAdd from './Board/PostAdd';
 
 function Board() {
   return (
       <>
-        <Route path='/Board/postView/:no' exact component={PostView} />
+        <Route path='/Board/postDetail/:no' exact component={PostDetail} />
         <Route path='/Board/postList' exact component={PostList} />
+        <Route path='/Board/postAdd' exact component={PostAdd} />
       </>
   );
 }

@@ -1,0 +1,60 @@
+.post-section {
+    display: flex;
+    font-family: "Cafe24SsurroundAir";
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-top: 12rem;
+}
+
+.post-section > div{
+    font-size: 3rem;
+    padding-bottom: 3rem;
+    font-weight: 800;
+}
+
+.table {
+    text-align: center;
+}
+
+.table-head{
+    background-color: rgb(255, 168, 153);
+}
+
+.table-head th {
+    padding: 1rem 2rem;
+    
+}
+
+.table-body tr td{
+    padding: 1rem 2rem;
+}
+
+.table-body tr td a {
+    text-decoration: none; outline: none;
+    color: black;
+}
+.table-body tr td a:hover{
+    color:rgb(255, 168, 153);
+}
+
+.post-add-btn {
+    margin-top: 3rem;
+    background-color: salmon;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-family: "Cafe24SsurroundAir";
+}
+
+
+.post-add-btn a {
+    text-decoration: none; outline: none;
+    color: black;
+}
+
+.post-add-btn:hover {
+    background-color: tomato;
+    cursor: pointer;
+}
