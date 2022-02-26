@@ -1,0 +1,46 @@
+.post-add-section {
+    display: flex;
+    font-family: "Cafe24SsurroundAir";
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-top: 7rem;
+}
+
+.post-add-section > h2{
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    font-weight: 800;
+}
+
+.editor-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.editor-container > .title-input{
+    width: 97%;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    font-family: "Cafe24SsurroundAir";
+}
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 30rem;
+}
+
+.add-submit-button {
+    margin-top: 3rem;
+    background-color: salmon;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-family: "Cafe24SsurroundAir";
+}
+
+
+.add-submit-button:hover {
+    background-color: tomato;
+    cursor: pointer;
+}
