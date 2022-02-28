@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import "../../css/Board/PostList.css";
 
 const PostList = (props) => {
-    const [ dataList, setDataList ] = useState([]);
-  
-    useEffect(() => {
-      setDataList(postList);
+    const [ dataList, setDataList ] = useState();
+    
+    useEffect(()=>{
+      if(localStorage.getItem('data')){
+        setDataList(JSON.parse(localStorage.getItem('data')));
+      }else{
+        setDataList(postList);
+      }
     }, [ ])
   
     return (
@@ -24,7 +28,7 @@ const PostList = (props) => {
             </thead>
             <tbody className="table-body">
                 {
-                    dataList ? dataList.map((item, index) => {
+                    dataList ? dataList.map((item) => {
                     return (
                         <tr key={item.no}>
                             <td>{ item.no }</td>
@@ -33,7 +37,10 @@ const PostList = (props) => {
                             <td>{ item.readCount }</td>
                         </tr>
                     )
-                    }) : ''
+                    }) : 
+                    <tr>
+                      <td></td>
+                    </tr>
                 }
             </tbody>
         </table>

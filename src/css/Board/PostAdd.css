@@ -39,8 +39,11 @@
     font-family: "Cafe24SsurroundAir";
 }
 
-
 .add-submit-button:hover {
     background-color: tomato;
     cursor: pointer;
+}
+
+.add-submit-button a{
+    text-decoration: none; outline: none;
 }

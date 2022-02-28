@@ -31,6 +31,7 @@
 }
 
 .detail-list-btn {
+    margin: 0 .5rem;
     margin-top: 3rem;
     background-color: salmon;
     padding: 1rem 2rem;
@@ -43,5 +44,22 @@
 
 .detail-list-btn:hover {
     background-color: tomato;
+    cursor: pointer;
+}
+
+.post-delete-btn {
+    margin: 0 .5rem;
+    margin-top: 3rem;
+    background-color: rgb(255, 183, 50);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-family: "Cafe24SsurroundAir";
+}
+
+
+.post-delete-btn:hover {
+    background-color: orange;
     cursor: pointer;
 }
