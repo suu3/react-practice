@@ -11,6 +11,11 @@ https://suu3.github.io/react_practice
 
 <img width="500px" src="./gif/Chat.gif"/>
 
+## ❓ Search
+구글 책검색 api & query-string을 이용한 검색  
+
+<img width="500px" src="./gif/Search.gif"/>
+
 ## 📄 Board
 ck에디터를 이용한 게시판 CRUD 연습. db대신 localstorage 사용.
 
