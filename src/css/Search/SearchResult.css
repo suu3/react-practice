@@ -1,0 +1,117 @@
+.search-result, .loarder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cafe24SsurroundAir";
+    background-color:#ffdde1;
+}
+
+.loader__text{
+    font-size: 3rem;
+}
+
+.loarder {
+    width: 100vw;
+    height: 100vh;
+}
+
+.result-container {
+    display: flex;
+    width: 150rem;
+    padding: 5rem;
+    margin: 10rem 0rem 2rem 0rem;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3rem;
+}
+
+.result-container > h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 4rem;
+    border-bottom: .1rem solid rgba(1, 1, 1, 0.2);
+}
+
+.result-container > ul, .result-container > li {
+    list-style: none;
+}
+
+.book{
+    word-break: keep-all;
+    height: 20rem;
+    overflow: auto;
+}
+
+/* 스크롤바 설정*/
+.book::-webkit-scrollbar{
+    width: .6rem;
+}
+
+.book::-webkit-scrollbar-thumb{
+    height: 17%;
+    background-color: rgb(255, 176, 152);
+    border-radius: 10px;  
+}
+
+.book::-webkit-scrollbar-track{
+    background-color: rgb(255, 243, 232);
+}
+
+.bookList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.bookList__title {
+    font-weight: 600;
+    font-size: 2rem;
+    padding: .5rem 0;
+    margin: 0;
+}
+
+.bookList__author{
+    color: rgba(1, 1, 1, 0.4);
+    padding: .5rem 0;
+    margin: 0;
+}
+
+.bookList__description{
+    font-size: 1.4rem;
+}
+
+.home-list-btn {
+    background-color: salmon;
+    padding: 2rem 2rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    border: none;
+    margin-bottom: 10rem;
+    color: white;
+    font-family: "Cafe24SsurroundAir";
+}
+
+
+.home-list-btn:hover {
+    background-color: rgb(255, 103, 86);
+    cursor: pointer;
+}
+  
+@media screen and (max-width:500px){ 
+    .bookList{
+        grid-template-columns: 1fr;
+    }
+    .result-container {
+        width: 30rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1280px) {
+    .bookList{
+        grid-template-columns: 1fr 1fr;
+    }
+    .result-container {
+        width: 80rem;
+    }
+}

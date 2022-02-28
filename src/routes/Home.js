@@ -18,14 +18,14 @@ class Home extends React.Component {
                             <Link to="/ToDo">✅ ToDo</Link>
                         </li>
                         <li className = "menu">
-                            <Link to="/Chat">✅ Chat</Link>
+                            <Link to="/Chat">💬 Chat</Link>
                         </li>
                         <li className = "menu">
                             <Link to="/Search">❓ Search</Link>
                         </li>                           
                         <li className = "menu">
                             <Link to="/Board/postList">📄 Board</Link>
-                        </li>   
+                        </li>
                     </ul>
                 </div>
             </section>

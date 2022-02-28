@@ -1,0 +1,56 @@
+.search-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    font-family: "Cafe24SsurroundAir";
+    height: 100vh;
+    background-color:#ffdde1;
+}
+.search-wrap > h2{
+    font-size: 3rem;
+    margin-top : -5rem;
+}
+
+.search-container > .book-input{
+    padding: 1.8rem;
+    border-radius: 1rem;
+    width: 40rem;
+    font-size: 2rem;
+    font-family: "Cafe24SsurroundAir";
+}
+
+
+.search-btn {
+    background-color: salmon;
+    padding: 2rem 2rem;
+    font-size: 2rem;
+    margin-left: .5rem;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-family: "Cafe24SsurroundAir";
+}
+
+
+.search-btn:hover {
+    background-color: rgb(255, 103, 86);
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px){ 
+    .search-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-container > .book-input {
+        width: 30rem;
+    }
+    .search-btn {
+        margin-top: 1rem;
+        width: 12rem;
+    }
+  }

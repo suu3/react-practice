@@ -4,6 +4,7 @@ import Home from "./routes/Home.js";
 import ToDo from "./routes/ToDo";
 import Chat from "./routes/Chat";
 import Search from "./routes/Search";
+import SearchResult from "./routes/SearchResult";
 import Board from "./routes/Board";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/ToDo" component={ToDo} />
       <Route path="/Chat" component={Chat} />
       <Route path="/Search" component={Search} />
+      <Route path="/SearchResult" component={SearchResult} />
       <Route path="/Board" component={Board} />
     </HashRouter>
   );
