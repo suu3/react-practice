@@ -53,9 +53,9 @@ const PostDetail = ({ history, location, match }) => {
               </div>
               <div className="detail-row">
                 <label>내용</label>
-                <div>
+              </div>
+              <div className='detail-content'>
                   { ReactHtmlParser(data.content) }
-                </div>
               </div>
             </>
           ) : '해당 게시글을 찾을 수 없습니다.'
