@@ -1,0 +1,44 @@
+@value boardOrange, buttonSalmon from './colors.css';
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.footer {
+  font-family: "Cafe24SsurroundAir";
+  background-color: boardOrange;
+  padding: 0 3rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 900;
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid black;
+}
+
+.row {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.total {
+  font-size: 2rem;
+  font-weight: 900;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
