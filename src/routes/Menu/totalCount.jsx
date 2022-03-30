@@ -6,7 +6,7 @@ const TotalCount = ({ selectedMenus }) => {
     <div className={styles.footer}>
       <span className={styles.title}>Selected List</span>
       {Object.keys(selectedMenus).map((key) => (
-        <p className={styles.row}>
+        <p key={key} className={styles.row}>
           <span>{selectedMenus[key].name}</span>
           <span>
             {selectedMenus[key].quantity * selectedMenus[key].price} Won

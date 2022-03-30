@@ -65,11 +65,17 @@ const Menu = (props) => {
     updated[menu.id] = updatedMenu;
     setMenus(updated);
 
+    const updatedSelectedMenus = { ...selectedMenus };
     if (updatedMenu.quantity === 0) {
-      const updatedSelectedMenus = { ...selectedMenus };
       delete updatedSelectedMenus[menu.id];
-      setSelectedMenus(updatedSelectedMenus);
+    } else {
+      const updatedSelectedMenu = {
+        ...menus[menu.id],
+        quantity: quantity === 0 ? 0 : quantity - 1,
+      };
+      updatedSelectedMenus[menu.id] = updatedSelectedMenu;
     }
+    setSelectedMenus(updatedSelectedMenus);
   };
   return (
     <div className={styles.menu_body}>
