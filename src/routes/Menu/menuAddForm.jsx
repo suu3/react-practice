@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "../../css/Menu/menuAddForm.module.css";
 
-const MenuAddForm = (props) => {
+const MenuAddForm = memo((props) => {
   const nameInputRef = React.createRef();
   const priceInputRef = React.createRef();
   const formRef = React.createRef();
@@ -41,6 +41,6 @@ const MenuAddForm = (props) => {
       <button className={styles.add_button}>Add</button>
     </form>
   );
-};
+});
 
 export default MenuAddForm;

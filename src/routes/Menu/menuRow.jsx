@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "../../css/Menu/menuRow.module.css";
 
-const MenuRow = ({ menu, onDelete, onIncrease, onDecrease }) => {
+const MenuRow = memo(({ menu, onDelete, onIncrease, onDecrease }) => {
   const onClickDelete = () => {
     onDelete(menu);
   };
@@ -31,6 +31,6 @@ const MenuRow = ({ menu, onDelete, onIncrease, onDecrease }) => {
       </div>
     </div>
   );
-};
+});
 
 export default MenuRow;

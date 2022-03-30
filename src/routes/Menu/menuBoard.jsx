@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import MenuRow from "./menuRow";
-import MenuAddForm from "./menuAddForm";
 import styles from "../../css/Menu/menuBoard.module.css";
 
 const MenuBoard = (props) => {
@@ -13,12 +12,8 @@ const MenuBoard = (props) => {
   const onClickDecrease = (menu) => {
     props.onDecrease(menu);
   };
-  const onClickAdd = (menu) => {
-    props.onAdd(menu);
-  };
   return (
     <>
-      <MenuAddForm onAdd={onClickAdd} />
       <ul className={styles.menus}>
         {Object.keys(props.menus).map((key) => (
           <MenuRow

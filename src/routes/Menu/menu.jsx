@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../css/Menu/menu.module.css";
 import MenuBoard from "./menuBoard";
+import MenuAddForm from "./menuAddForm";
 import Header from "./header";
 import TotalCount from "./totalCount";
 import "@fortawesome/fontawesome-free/js/all.js";
@@ -81,6 +82,7 @@ const Menu = (props) => {
     <div className={styles.menu_body}>
       <div className={styles.container}>
         <Header />
+        <MenuAddForm onAdd={handleAdd} />
         <MenuBoard
           menus={menus}
           onAdd={handleAdd}
