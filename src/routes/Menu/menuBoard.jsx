@@ -25,12 +25,48 @@ const MenuBoard = (props) => {
       return updated;
     });
   };
+  const handleDelete = (menu) => {
+    setMenus((menus) => {
+      const updated = { ...menus };
+      delete updated[menu.id];
+      return updated;
+    });
+  };
+
+  const handleIncrement = (menu) => {
+    setMenus((menus) => {
+      const updated = { ...menus };
+      const quantity = updated[menu.id].quantity;
+      const updatedMenu = { ...menus[menu.id], quantity: quantity + 1 };
+      updated[menu.id] = updatedMenu;
+      return updated;
+    });
+  };
+  const handleDecrement = (menu) => {
+    setMenus((menus) => {
+      const updated = { ...menus };
+      const quantity = updated[menu.id].quantity;
+      const updatedMenu = {
+        ...menus[menu.id],
+        quantity: quantity === 0 ? 0 : quantity - 1,
+      };
+      updated[menu.id] = updatedMenu;
+      return updated;
+    });
+  };
+
   return (
     <>
       <MenuAddForm onAdd={handleAdd} />
       <ul className={styles.menus}>
         {Object.keys(menus).map((key) => (
-          <MenuRow key={key} menu={menus[key]} />
+          <MenuRow
+            key={key}
+            menu={menus[key]}
+            onDelete={handleDelete}
+            onIncrease={handleIncrement}
+            onDecrease={handleDecrement}
+          />
         ))}
       </ul>
     </>
