@@ -6,6 +6,7 @@ import Chat from "./routes/Chat";
 import Search from "./routes/Search";
 import SearchResult from "./routes/SearchResult";
 import Board from "./routes/Board";
+import Menu from "./routes/Menu/menu";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/Search" component={Search} />
       <Route path="/SearchResult" component={SearchResult} />
       <Route path="/Board" component={Board} />
+      <Route path="/menu" component={Menu} />
     </HashRouter>
   );
 }

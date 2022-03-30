@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Cafe24SsurroundAir";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,7 +27,7 @@ ul {
 
 .home-border {
   background-color: white;
-  height: 30rem;
+  height: 35rem;
   margin: 5rem 0;
   border-radius: 5rem;
 }
@@ -38,7 +39,7 @@ ul {
 }
 
 .menu {
-  padding: .5rem 10rem;
+  padding: 0.5rem 10rem;
   text-decoration: none;
 }
 
@@ -49,16 +50,16 @@ ul {
   margin-left: -3rem;
 }
 
-@media screen and (min-width:768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   /* Tablet */
 }
-@media screen and (max-width:767px){ 
+@media screen and (max-width: 767px) {
   /* Mobile */
 
-  .home-border{
+  .home-border {
     height: 50rem;
   }
-  .introduce{  
+  .introduce {
     padding-top: 8rem;
   }
 }

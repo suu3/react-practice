@@ -1,0 +1,66 @@
+@value menuBackground, buttonSalmon from './colors.css';
+
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.row {
+  font-family: "Cafe24SsurroundAir";
+  margin: 0 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  background-color: menuBackground;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.name {
+  color: brown;
+}
+.price {
+  margin-left: 1rem;
+}
+.quantity {
+  background-color: rgb(42, 161, 155);
+  color: white;
+  font-weight: 900;
+  display: inline-block;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  padding-top: 0.35rem;
+  margin-left: 1rem;
+}
+
+.button_row {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.trash {
+  font-size: 2rem;
+}
+.minus,
+.trash {
+  margin-left: 1rem;
+}
+
+.plus,
+.minus {
+  padding: 0.6rem;
+  border-radius: 50%;
+  background-color: buttonSalmon;
+}
+
+.trash {
+  color: brown;
+}

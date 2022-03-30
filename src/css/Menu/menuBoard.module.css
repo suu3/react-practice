@@ -1,0 +1,7 @@
+@value boardOrange from './colors.css';
+
+.menus {
+  padding: 0;
+  margin: 0;
+  background-color: boardOrange;
+}
