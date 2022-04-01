@@ -7,6 +7,7 @@ import Search from "./routes/Search";
 import SearchResult from "./routes/SearchResult";
 import Board from "./routes/Board";
 import Menu from "./routes/Menu/menu";
+import Accordion from "./routes/Accordion/accordion";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/SearchResult" component={SearchResult} />
       <Route path="/Board" component={Board} />
       <Route path="/menu" component={Menu} />
+      <Route path="/accordion" component={Accordion} />
     </HashRouter>
   );
 }

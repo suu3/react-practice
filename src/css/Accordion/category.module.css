@@ -1,0 +1,38 @@
+.menu {
+  font-family: "Cafe24SsurroundAir";
+  margin-bottom: 0.1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  position: relative;
+}
+.title {
+  background-color: rgb(233, 233, 233);
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50rem;
+  height: 4rem;
+  margin-bottom: 0.1rem;
+}
+
+.content {
+  position: absolute;
+  width: 50rem;
+  height: 0;
+  z-index: -1;
+  /* height: 4rem; + position 지우면 펼쳐짐*/
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: rgb(233, 233, 233);
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
+.btn:hover {
+  cursor: pointer;
+  color: tomato;
+}

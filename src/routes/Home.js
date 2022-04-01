@@ -31,6 +31,9 @@ class Home extends React.Component {
                         <li className = "menu">
                             <Link to="/menu">🍔 Menu</Link>
                         </li>
+                        <li className = "menu">
+                            <Link to="/accordion">🎵 Accordion</Link>
+                        </li>
                     </ul>
                 </div>
             </section>
