@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../css/Accordion/category.module.css";
 
-const Category = ({ menu, handleBtnClick }) => {
+const Category = ({ isOpen, menu, handleBtnClick }) => {
   const onClickBtn = () => {
     handleBtnClick(menu.id);
   };
@@ -10,10 +10,16 @@ const Category = ({ menu, handleBtnClick }) => {
       <div className={styles.title}>
         <span>{menu.title}</span>
         <button onClick={onClickBtn} className={styles.btn}>
-          <i className="fas fa-angle-down"></i>
+          {isOpen ? (
+            <i className="fas fa-angle-up"></i>
+          ) : (
+            <i className="fas fa-angle-down"></i>
+          )}
         </button>
       </div>
-      <div className={styles.content}>{menu.content}</div>
+      <div className={isOpen ? styles.content_open : styles.content_close}>
+        {menu.content}
+      </div>
     </div>
   );
 };

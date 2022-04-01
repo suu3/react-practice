@@ -11,22 +11,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50rem;
+  width: 60rem;
   height: 4rem;
   margin-bottom: 0.1rem;
 }
 
-.content {
+.content_open {
+  width: 60rem;
+  word-break: keep-all;
+  z-index: -1;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  padding: 7rem 2rem 2rem 2rem;
+  background-color: rgb(233, 233, 233);
+  transition: height 0.1s ease-out;
+  overflow: auto;
+}
+
+.content_close {
+  transition: height 0.1s ease-in-out;
   position: absolute;
-  width: 50rem;
+  word-break: keep-all;
+  width: 60rem;
   height: 0;
   z-index: -1;
-  /* height: 4rem; + position 지우면 펼쳐짐*/
   display: flex;
   align-items: center;
   padding: 0.5rem 2rem;
   background-color: rgb(233, 233, 233);
 }
+
 .btn {
   background-color: transparent;
   border: none;
