@@ -22,7 +22,9 @@ class Home extends React.Component {
                         </li>
                         <li className = "menu">
                             <Link to="/Search">❓ Search</Link>
-                        </li>                           
+                        </li>
+                    </ul>
+                    <ul>                           
                         <li className = "menu">
                             <Link to="/Board/postList">📄 Board</Link>
                         </li>
