@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import styles from "../../css/Menu/menuAddForm.module.css";
 
-const MenuAddForm = memo((props) => {
+const MenuAddForm = memo(({ onAdd }) => {
   const nameInputRef = React.createRef();
   const priceInputRef = React.createRef();
   const formRef = React.createRef();
@@ -22,7 +22,7 @@ const MenuAddForm = memo((props) => {
       return;
     }
 
-    props.onAdd(menu);
+    onAdd(menu);
     formRef.current.reset();
   };
   return (

@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "../../css/Menu/totalCount.module.css";
 
 const TotalCount = ({ selectedMenus }) => {
+  const calTotalCount = (selectedMenus) => {
+    return Object.values(selectedMenus).reduce(function (prev, next) {
+      return prev + next.quantity * next.price;
+    }, 0);
+  };
+  const totalCount = useMemo(
+    () => calTotalCount(selectedMenus),
+    [selectedMenus]
+  );
+
   return (
     <div className={styles.footer}>
       <span className={styles.title}>Selected List</span>
@@ -15,15 +25,10 @@ const TotalCount = ({ selectedMenus }) => {
       ))}
       <div className={styles.total}>
         <span>Total Count</span>
-        <span>
-          {Object.values(selectedMenus).reduce(function (prev, next) {
-            return prev + next.quantity * next.price;
-          }, 0)}{" "}
-          Won
-        </span>
+        <span>{totalCount} Won</span>
       </div>
     </div>
   );
 };
 
-export default TotalCount;
+export default React.memo(TotalCount);
