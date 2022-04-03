@@ -18,7 +18,8 @@ const MenuAddForm = memo((props) => {
     };
     //값이 없으면 alert
     if (name === "" || price === "") {
-      alert("Please Fill All Input");
+      alert("Please fill in all inputs");
+      return;
     }
 
     props.onAdd(menu);
