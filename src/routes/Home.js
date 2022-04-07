@@ -23,6 +23,9 @@ class Home extends React.Component {
                         <li className = "menu">
                             <Link to="/Search">❓ Search</Link>
                         </li>
+                        <li className = "menu">
+                            <Link to="/Carousel">🚗 Carousel</Link>
+                        </li>
                     </ul>
                     <ul>                           
                         <li className = "menu">
