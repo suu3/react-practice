@@ -8,7 +8,6 @@ import SearchResult from "./routes/SearchResult";
 import Board from "./routes/Board";
 import Menu from "./routes/Menu/menu";
 import Accordion from "./routes/Accordion/accordion";
-import Carousel from "./routes/Carousel/carousel";
 function App() {
   return (
     <HashRouter>
@@ -20,7 +19,6 @@ function App() {
       <Route path="/Board" component={Board} />
       <Route path="/menu" component={Menu} />
       <Route path="/accordion" component={Accordion} />
-      <Route path="/carousel" component={Carousel} />
     </HashRouter>
   );
 }
